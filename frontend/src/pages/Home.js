@@ -20,14 +20,19 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div key={product._id}>
-            <ProductCard product={product} />
-          </div>
-        ))}
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/background.jpg')" }}
+    >
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-center mb-8">Products</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <div key={product._id}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
