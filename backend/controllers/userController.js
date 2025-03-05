@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const sendEmail = require('../utils/sendEmail');
 
+// Register a new user
 const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
 
@@ -30,6 +31,7 @@ const registerUser = async (req, res) => {
   }
 };
 
+// Login user
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -52,6 +54,7 @@ const loginUser = async (req, res) => {
   }
 };
 
+// Forgot password
 const forgotPassword = async (req, res) => {
   const { email } = req.body;
 
@@ -84,6 +87,7 @@ const forgotPassword = async (req, res) => {
   }
 };
 
+// Reset password
 const resetPassword = async (req, res) => {
   const { password } = req.body;
   const resetPasswordToken = crypto

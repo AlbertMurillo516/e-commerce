@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <img
-        src={product.image}
+        src={product.images[0]} // Use the image path from the product data
         alt={product.name}
         className="w-full h-48 object-cover"
       />

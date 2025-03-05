@@ -27,7 +27,7 @@ const ProductDetails = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <img
-          src={product.image}
+          src={product.image} // Use the image path from the product data
           alt={product.name}
           className="w-full h-64 object-cover"
         />

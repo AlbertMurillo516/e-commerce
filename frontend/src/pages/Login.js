@@ -23,49 +23,34 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/background.jpg')" }}
-    >
-      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl">
-        {/* Left Side: Image */}
-        <div className="hidden md:block md:w-1/2">
-          <img
-            src="/images/login-image.jpg"
-            alt="Login"
-            className="w-full h-full object-cover"
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/images/background.jpg')" }}>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-8">Login</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            className="w-full p-2 mb-4 border rounded"
           />
-        </div>
-
-        {/* Right Side: Form */}
-        <div className="w-full md:w-1/2 p-8">
-          <h1 className="text-3xl font-bold mb-8">Login</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full p-2 mb-4 border rounded"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full p-2 mb-4 border rounded"
-            />
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white p-2 rounded mb-4"
-            >
-              Login
-            </button>
-            <Link to="/forgot-password" className="text-blue-500 hover:underline">
-              Forgot Password?
-            </Link>
-          </form>
-        </div>
+          <input
+            type="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            className="w-full p-2 mb-4 border rounded"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-2 rounded mb-4"
+          >
+            Login
+          </button>
+          <Link to="/forgot-password" className="text-blue-500 hover:underline">
+            Forgot Password?
+          </Link>
+        </form>
       </div>
     </div>
   );
